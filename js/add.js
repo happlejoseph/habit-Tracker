@@ -25,4 +25,15 @@ saveBtn.addEventListener('click', ()=> {
         target : target
     }
 
-})
+    allData.push(newHabit);
+    localStorage.setItem('data', JSON.stringify(allData));
+
+    titleInput.value = '';
+    categoryInput.value = '';
+    targetInput.value = '';
+
+    alert('Habit added successfully!');
+
+    window.location.href = 'index.html';
+
+});

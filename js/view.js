@@ -23,3 +23,16 @@ function displayHabits() {
             habitList.appendChild(div);
     });
 }
+
+function deleteHabit(id) {
+    allData = allBata.filter(habit => habit.id !== id);
+    localStorage.setItem('data', JSON.stringify(allData));
+    displayHabits();
+
+}
+
+function editHabit(id) {
+    window.location.href = `edit.html?id=${id}`;
+}
+
+displayHabits();

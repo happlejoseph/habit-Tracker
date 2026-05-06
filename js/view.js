@@ -25,8 +25,10 @@ function displayHabits() {
 }
 
 function deleteHabit(id) {
-    allData = allBata.filter(habit => habit.id !== id);
+    allData = allData.filter(habit => habit.id !== id);
+
     localStorage.setItem('data', JSON.stringify(allData));
+    
     displayHabits();
 
 }

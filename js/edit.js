@@ -10,9 +10,9 @@ let allData = JSON.parse(localStorage.getItem('data')) || [];
 let params = new URLSearchParams(window.location.search);
 let id = params.get('id');
 
-let habits = allData.find(habit => habit.id == id);
+let habit = allData.find(h => h.id == id);
 
-if (habits) {
+if (habit) {
     nameInput.value = habit.name;
     categoryInput.value = habit.category;
     targetInput.value = habit.target;
@@ -25,7 +25,6 @@ updateBtn.addEventListener("click", () => {
     habit.target = targetInput.value;
 
     localStorage.setItem("data", JSON.stringify(allData));
-
 
     window.location.href = "view.html";
 });
